@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://jdbiv3igoij"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_x3nlh"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x3nlh")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 79.0
+offset_right = 86.0
+offset_bottom = 110.0
+text = "say hello"
+
+[node name="Name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 44.0
+offset_right = 249.0
+offset_bottom = 79.0
+placeholder_text = "Enter your name"
+
+[node name="Response" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 133.0
+offset_right = 345.0
+offset_bottom = 156.0
+
+[connection signal="pressed" from="Button" to="." method="_on_hello_pressed"]
