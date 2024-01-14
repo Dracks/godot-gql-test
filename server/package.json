@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "fastify": "^4.14.1",
-    "mercurius": "^12.2.0"
+    "mercurius": "^12.2.0",
+    "mqemitter": "^5.0.0"
   }
 }
