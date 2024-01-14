@@ -34,4 +34,27 @@ offset_top = 133.0
 offset_right = 345.0
 offset_bottom = 156.0
 
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "-- Data from subscription? --"
+horizontal_alignment = 2
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = 30.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Subscribe!"
+
 [connection signal="pressed" from="Button" to="." method="_on_hello_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

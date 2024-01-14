@@ -39,7 +39,8 @@ class StartTimer {
   private static instance: StartTimer | undefined
   static initialize(pubsub: PubSub){
     if (!StartTimer.instance){
-      new StartTimer(pubsub).start()
+      StartTimer.instance = new StartTimer(pubsub)
+      StartTimer.instance.start()
     }
   }
 }
@@ -63,6 +64,7 @@ const resolvers = {
   Subscription: {
     time: {
       subscribe: async (_, __, { pubsub }) => {
+        console.log("We are subscribed!")
         StartTimer.initialize(pubsub)
         return await pubsub.subscribe('date')
       }
