@@ -6,11 +6,11 @@ var helloSubscription: GQLQuerySubscriber
 
 func _ready():
 	var gqlClient : GqlClient = get_node('/root/GqlClient')
-	helloExecutor = gqlClient.query('hello', {"name": "String"}, GQLQuery.new("hello").set_args({"name":"name"}))
+	helloExecutor = gqlClient.query('hello', {"name": "String"}, GQLQuery.new("hello").set_args_v2({"name":"$"}))
 	helloExecutor.graphql_response.connect(self.graphql_response)
 	add_child(helloExecutor)
 	subscribe()
-	
+
 func subscribe():
 	var gqlClient : GqlClient = get_node('/root/GqlClient')
 	helloSubscription = gqlClient.subscribe('time', {}, GQLQuery.new("time"))
